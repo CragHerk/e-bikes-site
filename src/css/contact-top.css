@@ -1,0 +1,27 @@
+.container__top {
+  margin-top: 25px;
+}
+.contacts-top {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .contacts-top {
+    display: flex;
+  }
+}
+.social-media-icons {
+  position: absolute;
+  top: 25px;
+  right: 150px;
+}
+.contact-item {
+  margin-left: 150px;
+  display: flex;
+}
+.contact-item a {
+  text-decoration: none;
+  color: rgb(61, 62, 62);
+}
+#icon-top {
+  margin-right: 5px;
+}

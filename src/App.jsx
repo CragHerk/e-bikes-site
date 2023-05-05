@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
+import phoneIcon from "./assets/phone.svg";
+import emailIcon from "./assets/email.svg";
+import facebookIcon from "./assets/facebook.svg";
+import instagramIcon from "./assets/instagram.svg";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container__top">
+      <div className="contacts-top">
+        <div className="contact-item">
+          <img src={phoneIcon} alt="Phone Icon" id="icon-top" />
+          <a href="tel:+48123456789">Zadzwoń: xxx-xxx-xxx</a>
+        </div>
+        <div className="contact-item">
+          <img src={emailIcon} alt="Email Icon" id="icon-top" />
+          <a href="mailto:adres@example.com">Email: adres@example.com</a>
+        </div>
+        <div className="social-media-icons">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={facebookIcon} alt="Facebook Icon" />
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={instagramIcon} alt="Instagram Icon" />
+          </a>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      {/* Reszta zawartości strony */}
+    </div>
+  );
 }
 
-export default App
+export default App;
