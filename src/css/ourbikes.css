@@ -49,21 +49,21 @@
   background-size: contain;
   background-color: transparent;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 }
 .bikes__buttons--prev {
   background-image: url(../assets/svg/arrow-left-circle-fill.svg);
   background-size: contain;
   background-color: transparent;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 }
 .bikes__buttons {
-  height: 40px;
+  height: 45px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
