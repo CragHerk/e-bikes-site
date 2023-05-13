@@ -3,11 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../assets/images/background2.jpg);
+  background-image: url(../../assets/images/background2.jpg);
   height: 800px;
 }
-.container__bikes h2 {
+.container__bikes span {
   margin-bottom: -15px;
+  font-size: 20px;
+  margin-top: 15px;
 }
 .bikes__button {
   display: flex;
@@ -20,6 +22,8 @@
   margin-top: 15px;
   border: 1px solid rgb(196, 193, 193);
   border-radius: 5px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 .bikes__presentation img {
   margin-left: 15px;
@@ -45,25 +49,42 @@
   font-size: large;
 }
 .bikes__buttons--next {
-  background-image: url(../assets/svg/arrow-right-circle-fill.svg);
+  background-image: url(../../assets/svg/arrow-right-circle-fill.svg);
   background-size: contain;
   background-color: transparent;
   border: none;
   width: 45px;
   height: 45px;
+  position: absolute;
+  right: 0;
+  z-index: 5;
 }
 .bikes__buttons--prev {
-  background-image: url(../assets/svg/arrow-left-circle-fill.svg);
+  background-image: url(../../assets/svg/arrow-left-circle-fill.svg);
   background-size: contain;
   background-color: transparent;
   border: none;
   width: 45px;
   height: 45px;
+  position: absolute;
+  left: 0;
+  z-index: 5;
 }
 .bikes__buttons {
   height: 45px;
-
+  width: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+}
+.bikes__presentation--left {
+  transform: translateX(20%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.bikes__presentation--right {
+  transform: translateX(-20%);
+  transition: transform 0.3s ease-in-out;
 }

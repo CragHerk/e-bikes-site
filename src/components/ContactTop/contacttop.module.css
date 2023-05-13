@@ -1,27 +1,27 @@
 .container__top {
   margin-top: 25px;
 }
-.contacts-top {
+.contactstop {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  .contacts-top {
+  .contactstop {
     display: flex;
   }
 }
-.social-media-icons {
+.socialmediaicons {
   position: absolute;
   top: 25px;
   right: 150px;
 }
-.contact-item {
+.contactitem {
   margin-left: 150px;
   display: flex;
 }
-.contact-item a {
+.contacitem a {
   text-decoration: none;
   color: rgb(61, 62, 62);
 }
-#icon-top {
+#icontop {
   margin-right: 5px;
 }
