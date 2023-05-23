@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { bikesData } from "../../data/bikesData";
 import styles from "./ourbikes.module.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const OurBikes = () => {
   const [currentBike, setCurrentBike] = useState(0);
   const [animationClass, setAnimationClass] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const previousBike = () => {
     setAnimationClass(styles["bikes__presentation--right"]);
@@ -22,16 +25,18 @@ const OurBikes = () => {
     }, 500);
   };
 
+  const handleDateSelect = (date) => {
+    setSelectedDate(date);
+    // Tu możesz wykonać dowolną logikę związaną z wybraną datą
+    console.log("Wybrana data:", date);
+  };
+
   return (
     <div className={styles["container__bikes"]}>
       <span>NASZE ROWERY DO WYPOŻYCZENIA</span>
       <div className={styles["bikes__image"]}>
         <div className={styles["bikes__description"]}>
-          <p>Zapoznaj się z naszą ofertą </p>
-        </div>
-        <div className={styles["bikes__button"]}>
-          <span></span>
-          <button>Button</button>
+          <p>Zapoznaj się z naszą ofertą</p>
         </div>
       </div>
       <div className={styles["bikes__buttons"]}>
@@ -54,11 +59,12 @@ const OurBikes = () => {
 
           <div className={styles["bikes__reservation"]}>
             <p>{bikesData[currentBike].type}</p>
-            <div>
-              <button className={styles["bikes__reservation--button"]}>
-                Zarezerwuj
-              </button>
-            </div>
+            <DatePicker
+              selected={selectedDate}
+              minDate={new Date()}
+              onChange={handleDateSelect}
+              placeholderText="Wybierz datę"
+            />
           </div>
         </div>
       </div>
