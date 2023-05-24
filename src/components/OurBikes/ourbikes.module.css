@@ -3,43 +3,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../../assets/images/background2.jpg);
+  background-color: rgb(188, 188, 188);
   height: 800px;
 }
+
 .container__bikes span {
   margin-bottom: -15px;
   font-size: 20px;
   margin-top: 15px;
 }
+
 .bikes__button {
   display: flex;
   justify-content: center;
 }
+
 .bikes__presentation {
   width: 350px;
   height: 600px;
   background-color: white;
   margin-top: 15px;
   border: 1px solid rgb(196, 193, 193);
-  border-radius: 5px;
+  border-radius: 8px;
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  margin-left: 75px;
+  overflow: hidden;
 }
+
 .bikes__presentation img {
-  margin-left: 15px;
   margin-top: 5px;
   margin-bottom: 50px;
 }
+
 .bikes__presentation h2 {
   display: flex;
   justify-content: center;
   text-decoration: underline;
 }
+
 .bikes__reservation {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .bikes__reservation--button {
   background-color: white;
   border: 1px solid rgb(52, 48, 48);
@@ -48,43 +55,47 @@
   height: 50px;
   font-size: large;
 }
+
 .bikes__buttons--next {
-  background-image: url(../../assets/svg/arrow-right-circle-fill.svg);
+  background-image: url(../../assets/svg/caret-right.svg);
   background-size: contain;
   background-color: transparent;
+  background-repeat: no-repeat;
   border: none;
   width: 45px;
   height: 45px;
   position: absolute;
-  right: 0;
+  right: 20px;
+  top: 270px;
+
   z-index: 5;
 }
+
 .bikes__buttons--prev {
-  background-image: url(../../assets/svg/arrow-left-circle-fill.svg);
+  background-image: url(../../assets/svg/caret-left.svg);
   background-size: contain;
   background-color: transparent;
+  background-repeat: no-repeat;
   border: none;
   width: 45px;
   height: 45px;
   position: absolute;
-  left: 0;
+  left: 20px;
+  top: 270px;
+
   z-index: 5;
 }
+
 .bikes__buttons {
   height: 45px;
   width: 500px;
   height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   position: relative;
-}
-.bikes__presentation--left {
-  transform: translateX(20%);
-  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
 }
 
-.bikes__presentation--right {
-  transform: translateX(-20%);
-  transition: transform 0.3s ease-in-out;
+.custom-datepicker-container div {
+  display: flex;
+  justify-content: center;
 }
