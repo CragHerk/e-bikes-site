@@ -9,6 +9,11 @@
   margin-left: 75px;
   overflow: hidden;
 }
+@media (min-width: 768px) {
+  .bikes__presentation {
+    margin-left: 0;
+  }
+}
 .bikes__presentation img {
   margin-top: 5px;
   margin-bottom: 50px;

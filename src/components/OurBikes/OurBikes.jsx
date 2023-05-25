@@ -1,4 +1,3 @@
-// Komponent OurBikes.jsx
 import { useMediaQuery } from "react-responsive";
 import React, { useState, useEffect } from "react";
 import { bikesData } from "../../data/bikesData";
@@ -8,8 +7,6 @@ import BikeItem from "../BikeItem/BikeItem";
 import BikesHeader from "../BikesHeader/BikesHeader";
 
 const OurBikes = () => {
-  const isTablet = useMediaQuery({ minWidth: 768 });
-  const isDesktop = useMediaQuery({ minWidth: 1200 });
   const [currentBike, setCurrentBike] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [direction, setDirection] = useState("left");
@@ -54,38 +51,43 @@ const OurBikes = () => {
     immediate: !loaded,
   });
 
+  const isTablet = useMediaQuery({ minWidth: 768 });
+
   return (
     <div className={styles["container__bikes"]}>
       <BikesHeader />
 
-      <div className={styles["bikes__buttons"]}>
-        {isDesktop && (
-          <>
-            <button
-              className={`${styles["bikes__buttons--prev"]} ${
-                direction === "left" ? styles["left"] : styles["right"]
-              }`}
-              onClick={previousBike}
-            ></button>
-            <button
-              className={`${styles["bikes__buttons--next"]} ${
-                direction === "left" ? styles["left"] : styles["right"]
-              }`}
-              onClick={nextBike}
-            ></button>
-          </>
-        )}
+      {isTablet ? (
+        <div className={styles["bikes__grid"]}>
+          <BikeItem bike={bikesData[currentBike]} />
+          <BikeItem bike={bikesData[(currentBike + 1) % bikesData.length]} />
+        </div>
+      ) : (
+        <div className={styles["bikes__buttons"]}>
+          <button
+            className={`${styles["bikes__buttons--prev"]} ${
+              direction === "left" ? styles["left"] : styles["right"]
+            }`}
+            onClick={previousBike}
+          ></button>
+          <button
+            className={`${styles["bikes__buttons--next"]} ${
+              direction === "left" ? styles["left"] : styles["right"]
+            }`}
+            onClick={nextBike}
+          ></button>
 
-        {transitions((style, item) => (
-          <animated.div
-            key={item}
-            className={styles["bikes__presentation"]}
-            style={style}
-          >
-            <BikeItem bike={bikesData[item]} />
-          </animated.div>
-        ))}
-      </div>
+          {transitions((style, item) => (
+            <animated.div
+              key={item}
+              className={styles["bikes__presentation"]}
+              style={style}
+            >
+              <BikeItem bike={bikesData[item]} />
+            </animated.div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
