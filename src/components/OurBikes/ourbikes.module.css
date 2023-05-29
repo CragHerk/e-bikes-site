@@ -5,6 +5,7 @@
   align-items: center;
   background-color: rgb(188, 188, 188);
   height: 800px;
+  width: 100vw;
 }
 
 .container__bikes span {
@@ -57,9 +58,46 @@
   overflow: hidden;
 }
 .bikes__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
-  align-items: center;
+  height: 620px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+@media (min-width: 1200px) {
+  .bikes__grid {
+    justify-content: center;
+  }
+}
+.bikes__buttons--next--tablet {
+  background-image: url(../../assets/svg/caret-right.svg);
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  width: 45px;
+  height: 45px;
+
+  z-index: 5;
+  position: absolute;
+  top: 45%;
+  right: -30px;
+}
+
+.bikes__buttons--prev--tablet {
+  background-image: url(../../assets/svg/caret-left.svg);
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  width: 45px;
+  height: 45px;
+
+  z-index: 5;
+  position: absolute;
+  top: 45%;
+  left: -30px;
+}
+.bikes__container--tablet {
+  display: flex;
+  position: relative;
 }

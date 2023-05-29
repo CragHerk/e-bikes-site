@@ -38,7 +38,7 @@ const OurBikes = () => {
 
   const transitions = useTransition(currentBike, {
     key: currentBike,
-    config: { duration: 1000 },
+    config: { duration: 500 },
     from: {
       opacity: 0,
       transform: `translateX(${direction === "left" ? "-" : ""}100%)`,
@@ -51,18 +51,52 @@ const OurBikes = () => {
     immediate: !loaded,
   });
 
-  const isTablet = useMediaQuery({ minWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1299 });
+  const isDesktop = useMediaQuery({ minWidth: 1300 });
 
   return (
     <div className={styles["container__bikes"]}>
       <BikesHeader />
 
-      {isTablet ? (
-        <div className={styles["bikes__grid"]}>
-          <BikeItem bike={bikesData[currentBike]} />
-          <BikeItem bike={bikesData[(currentBike + 1) % bikesData.length]} />
+      {isTablet && (
+        <div className={styles["bikes__container--tablet"]}>
+          <button
+            className={`${styles["bikes__buttons--prev--tablet"]} ${
+              direction === "left" ? styles["left"] : styles["right"]
+            }`}
+            onClick={previousBike}
+          ></button>
+          <div className={styles["bikes__grid"]}>
+            {transitions((style, item) => (
+              <animated.div key={item} style={style}>
+                <div className={styles["bikes__presentation"]}>
+                  <BikeItem bike={bikesData[item]} />
+                </div>
+              </animated.div>
+            ))}
+          </div>
+          <button
+            className={`${styles["bikes__buttons--next--tablet"]} ${
+              direction === "left" ? styles["left"] : styles["right"]
+            }`}
+            onClick={nextBike}
+          ></button>
         </div>
-      ) : (
+      )}
+
+      {isDesktop && (
+        <div className={styles["bikes__container--desktop"]}>
+          <div className={styles["bikes__grid"]}>
+            {bikesData.map((bike, index) => (
+              <div className={styles["bikes__presentation"]} key={index}>
+                <BikeItem bike={bike} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {!isTablet && !isDesktop && (
         <div className={styles["bikes__buttons"]}>
           <button
             className={`${styles["bikes__buttons--prev"]} ${
@@ -83,7 +117,9 @@ const OurBikes = () => {
               className={styles["bikes__presentation"]}
               style={style}
             >
-              <BikeItem bike={bikesData[item]} />
+              <div className={styles["bikes__presentation-inner"]}>
+                <BikeItem bike={bikesData[item]} />
+              </div>
             </animated.div>
           ))}
         </div>

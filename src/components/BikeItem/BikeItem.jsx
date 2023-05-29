@@ -1,14 +1,22 @@
-// Komponent BikeItem.jsx
-
-import React from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from "react";
 import { animated } from "react-spring";
 import styles from "./BikeItem.module.css";
+import Reservation from "../Reservation/Reservation";
 
-const BikeItem = ({ bike, selectedDate }) => {
+const BikeItem = ({ bike }) => {
+  const [showReservation, setShowReservation] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+
   const handleDateSelect = (date) => {
-    console.log("Wybrana data:", date);
+    setSelectedDate(date);
+  };
+
+  const handleReservationToggle = () => {
+    setShowReservation(!showReservation);
+  };
+
+  const handleCloseReservation = () => {
+    setShowReservation(false);
   };
 
   return (
@@ -22,14 +30,16 @@ const BikeItem = ({ bike, selectedDate }) => {
 
       <div className={styles["bikes__reservation"]}>
         <p>{bike.type}</p>
-        <DatePicker
-          selected={selectedDate}
-          minDate={new Date()}
-          onChange={handleDateSelect}
-          placeholderText="Wybierz datę"
-          wrapperClassName={styles["custom-datepicker-container"]}
-        />
+        <button onClick={handleReservationToggle}>Zarezerwuj</button>
       </div>
+
+      {showReservation && (
+        <Reservation
+          selectedDate={selectedDate}
+          handleDateSelect={handleDateSelect}
+          handleClose={handleCloseReservation}
+        />
+      )}
     </animated.div>
   );
 };
