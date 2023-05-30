@@ -28,7 +28,7 @@
   width: 45px;
   height: 45px;
   position: absolute;
-  right: 20px;
+  right: 50px;
   top: 270px;
 
   z-index: 5;
@@ -58,14 +58,25 @@
   overflow: hidden;
 }
 .bikes__grid {
-  height: 620px;
+  height: 600px;
   width: 100%;
-  display: flex;
+
   overflow: hidden;
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .bikes__grid {
+    width: 768px;
+  }
+  .animateddiv {
+    display: flex;
+  }
+}
+@media (min-width: 1300px) {
   .bikes__grid {
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
   }
 }
 .bikes__buttons--next--tablet {
@@ -80,7 +91,7 @@
   z-index: 5;
   position: absolute;
   top: 45%;
-  right: -30px;
+  right: 35px;
 }
 
 .bikes__buttons--prev--tablet {
