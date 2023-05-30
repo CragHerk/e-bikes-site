@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/e-bikes-site/static/css/main.f037bf59.css",
+    "main.js": "/e-bikes-site/static/js/main.464bf259.js",
+    "static/media/bike2.png": "/e-bikes-site/static/media/bike2.f1058209d70d7c00e54e.png",
+    "static/media/bike1.png": "/e-bikes-site/static/media/bike1.8ddba0c6334a0af7e80d.png",
+    "static/media/examplebike.jpg": "/e-bikes-site/static/media/examplebike.fe1fe006af32634777eb.jpg",
+    "static/media/instagram.svg": "/e-bikes-site/static/media/instagram.84b86a71c73f6de2d50a14fd39dfc899.svg",
+    "static/media/facebook.svg": "/e-bikes-site/static/media/facebook.6fc6215d6e271bd73c98de054a42f071.svg",
+    "static/media/bike3.png": "/e-bikes-site/static/media/bike3.272cc2a48e824df9bf87.png",
+    "static/media/email.svg": "/e-bikes-site/static/media/email.6ca87e2c214bf7f40416fda19fb5a837.svg",
+    "static/media/phone.svg": "/e-bikes-site/static/media/phone.cf7a06fc71a2174e97e471c8eff37ee1.svg",
+    "index.html": "/e-bikes-site/index.html",
+    "static/media/bicycle.svg": "/e-bikes-site/static/media/bicycle.e9ea9ca9598d46f2c60ab72fd5f41be8.svg",
+    "static/media/caret-right.svg": "/e-bikes-site/static/media/caret-right.b10fb4db792d3f0a9ef0.svg",
+    "static/media/caret-left.svg": "/e-bikes-site/static/media/caret-left.141027cd9478e34c80e0.svg",
+    "main.f037bf59.css.map": "/e-bikes-site/static/css/main.f037bf59.css.map",
+    "main.464bf259.js.map": "/e-bikes-site/static/js/main.464bf259.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f037bf59.css",
+    "static/js/main.464bf259.js"
+  ]
+}
