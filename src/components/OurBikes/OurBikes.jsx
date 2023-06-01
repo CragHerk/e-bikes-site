@@ -55,7 +55,7 @@ const OurBikes = () => {
   const isDesktop = useMediaQuery({ minWidth: 1300 });
 
   return (
-    <div className={styles['container__bikes']}>
+    <div id="targetBikes" className={styles['container__bikes']}>
       <BikesHeader />
 
       {isTablet && (

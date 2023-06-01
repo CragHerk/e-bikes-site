@@ -1,14 +1,16 @@
 .bikes__presentation {
   width: 320px;
-  height: 598px;
+  height: 592px;
   background-color: white;
   margin-top: 15px;
-  border: 1px solid rgb(196, 193, 193);
+  border: 1px solid rgb(208, 205, 205);
   position: relative;
   margin-left: 75px;
   margin-top: 0px;
   overflow: hidden;
-  border: 1px solid grey;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
 }
 
 @media (min-width: 768px) {
@@ -17,6 +19,16 @@
     margin-right: 15px;
   }
 }
+@media (min-width: 1300px) {
+  .bikes__presentation {
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: visible;
+  }
+  .bikes__presentation:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .bikes__presentation img {
   margin-bottom: 50px;
 }
@@ -41,8 +53,11 @@
   height: 50px;
   font-size: large;
 }
+.bikes__reservation-button:hover {
+  background-color: orange;
+}
 
-.bikes__reservation button {
+.bikes__reservation-button {
   border: none;
   display: flex;
   justify-content: center;
@@ -53,8 +68,29 @@
   width: 150px;
   height: 50px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid rgb(208, 205, 205);
   font-size: larger;
-  color: black;
+  color: rgb(72, 71, 71);
   background-color: transparent;
+  transition: transform 0.3s;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bikes__reservation-button:disabled {
+  cursor: not-allowed;
+}
+
+.bikes__reservation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bikes__reservation-button-animate {
+  transform: scale(0.5);
+  pointer-events: none;
+}
+.bikename {
+  color: rgb(102, 100, 100);
 }

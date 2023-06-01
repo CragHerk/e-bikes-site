@@ -3,15 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(188, 188, 188);
+  background-color: #e6e6e6;
   height: 800px;
   width: 100vw;
 }
 
 .container__bikes span {
-  margin-bottom: -15px;
   font-size: 20px;
-  margin-top: 15px;
 }
 
 .bikes__button {
@@ -28,7 +26,7 @@
   width: 45px;
   height: 45px;
   position: absolute;
-  right: 50px;
+  right: 59px;
   top: 270px;
 
   z-index: 5;
@@ -43,7 +41,7 @@
   width: 45px;
   height: 45px;
   position: absolute;
-  left: 20px;
+  left: 40px;
   top: 270px;
 
   z-index: 5;
@@ -52,23 +50,25 @@
 .bikes__buttons {
   height: 45px;
   width: 500px;
-  height: 600px;
+  height: 599px;
 
   position: relative;
   overflow: hidden;
 }
 .bikes__grid {
-  height: 600px;
+  height: 599px;
   width: 100%;
+  margin-bottom: 5px;
 
   overflow: hidden;
+}
+.animateddiv {
+  display: flex;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .bikes__grid {
     width: 768px;
-  }
-  .animateddiv {
-    display: flex;
   }
 }
 @media (min-width: 1300px) {
@@ -91,7 +91,7 @@
   z-index: 5;
   position: absolute;
   top: 45%;
-  right: 35px;
+  right: 0;
 }
 
 .bikes__buttons--prev--tablet {
@@ -106,7 +106,7 @@
   z-index: 5;
   position: absolute;
   top: 45%;
-  left: -30px;
+  left: 0px;
 }
 .bikes__container--tablet {
   display: flex;

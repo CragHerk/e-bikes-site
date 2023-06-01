@@ -21,9 +21,10 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 .container__button:hover {
-  transform: scale(1.1);
+  transform: scale(1.07);
 }
 .container__button img {
   height: 25px;
