@@ -1,9 +1,9 @@
-import React from "react";
-import phoneIcon from "../../assets/svg/phone.svg";
-import emailIcon from "../../assets/svg/email.svg";
-import facebookIcon from "../../assets/svg/facebook.svg";
-import instagramIcon from "../../assets/svg/instagram.svg";
-import styles from "./contacttop.module.css";
+import React from 'react';
+import phoneIcon from '../../assets/svg/phone.svg';
+import emailIcon from '../../assets/svg/email.svg';
+import facebookIcon from '../../assets/svg/facebook.svg';
+import instagramIcon from '../../assets/svg/instagram.svg';
+import styles from './contacttop.module.css';
 
 function contactTop() {
   return (

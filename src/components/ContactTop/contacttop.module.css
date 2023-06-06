@@ -1,5 +1,5 @@
 .container__top {
-  margin-top: 25px;
+  margin-top: 45px;
 }
 .contactstop {
   display: none;
@@ -11,7 +11,7 @@
 }
 .socialmediaicons {
   position: absolute;
-  top: 25px;
+
   right: 150px;
 }
 .contactitem {

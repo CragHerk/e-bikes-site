@@ -1,10 +1,10 @@
-import React from "react";
-import ContactTop from "./components/ContactTop/ContactTop";
+import React from 'react';
+import ContactTop from './components/ContactTop/ContactTop';
 
-import FrontContainer from "./components/FrontContainer/FrontContainer.jsx";
-import MyComponent from "./components/Description/Description.jsx";
-import OurBikes from "./components/OurBikes/OurBikes.jsx";
-import "./App.css";
+import FrontContainer from './components/FrontContainer/FrontContainer.jsx';
+import MyComponent from './components/Description/Description.jsx';
+import OurBikes from './components/OurBikes/OurBikes.jsx';
+import './App.css';
 const App = () => {
   return (
     <div>

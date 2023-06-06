@@ -58,6 +58,9 @@ const BikeItem = ({ bike }) => {
               selectedDate={selectedDate}
               handleDateSelect={handleDateSelect}
               handleClose={handleCloseReservation}
+              bikeName={bike.name}
+              bikeType={bike.type}
+              bikeImage={bike.image}
             />
           )}
         </animated.div>

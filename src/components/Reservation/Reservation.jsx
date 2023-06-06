@@ -8,14 +8,21 @@ import { animated, useSpring } from 'react-spring';
 import ReactDOM from 'react-dom';
 import Summary from 'components/Summary/Summary';
 
-const Reservation = ({ selectedDate, handleDateSelect, handleClose }) => {
+const Reservation = ({
+  selectedDate,
+  handleDateSelect,
+  handleClose,
+  bikeName,
+  bikeType,
+  bikeImage,
+}) => {
   const [isDateReserved, setIsDateReserved] = useState(false);
   const [selectedPeriod, setSelectedPeriod] = useState('4h');
   const [price, setPrice] = useState(100);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showContent, setShowContent] = useState(true);
   const [showSummary, setShowSummary] = useState(false);
-
+  const [scrollTop, setScrollTop] = useState(0);
   const handlePeriodSelect = event => {
     const period = event.target.value;
     setSelectedPeriod(period);
@@ -41,6 +48,8 @@ const Reservation = ({ selectedDate, handleDateSelect, handleClose }) => {
     // Zmiana stanu, aby wyświetlić komponent Summary i ukryć komponent Reservation
     setShowContent(false);
     setShowSummary(true);
+    setScrollTop(window.pageYOffset || document.documentElement.scrollTop);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Tutaj można wywołać odpowiednie funkcje lub metody po zakończeniu rezerwacji
   };
@@ -70,6 +79,8 @@ const Reservation = ({ selectedDate, handleDateSelect, handleClose }) => {
         return 200;
       case '2d':
         return 400;
+      case '3d':
+        return 600;
       default:
         return 0;
     }
@@ -113,6 +124,9 @@ const Reservation = ({ selectedDate, handleDateSelect, handleClose }) => {
             <option className={styles.option} value="2d">
               2 dni
             </option>
+            <option className={styles.option} value="3d">
+              3 dni
+            </option>
           </select>
           <img
             className={styles.calendar}
@@ -147,9 +161,13 @@ const Reservation = ({ selectedDate, handleDateSelect, handleClose }) => {
         ReactDOM.createPortal(
           <div className={styles.fullScreen}>
             <Summary
-              selectedDate={selectedDate.toLocaleDateString()} // Przekonwertuj datę na tekst
+              selectedDate={selectedDate} // Przekazanie obiektu Date
               selectedPeriod={selectedPeriod}
               price={price}
+              bikeName={bikeName}
+              bikeType={bikeType}
+              bikeImage={bikeImage}
+              scrollTop={scrollTop}
             />
           </div>,
           document.body
